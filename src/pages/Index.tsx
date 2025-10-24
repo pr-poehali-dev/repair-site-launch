@@ -18,21 +18,51 @@ const Index = () => {
     setIsSubmitting(false);
   };
 
-  const portfolioItems = [
+  const detailedServices = [
     {
-      title: "Современная гостиная",
-      image: "https://cdn.poehali.dev/projects/18b5b297-1a27-462b-9e7b-9286d403bdca/files/d98a4c6d-d45c-4741-81ec-f9d01c956d37.jpg",
-      description: "Стильный интерьер с использованием натуральных материалов"
+      icon: "Paintbrush",
+      title: "Покраска стен и потолков",
+      description: "Качественная окраска любой сложности с подбором цвета"
     },
     {
-      title: "Роскошная кухня",
-      image: "https://cdn.poehali.dev/projects/18b5b297-1a27-462b-9e7b-9286d403bdca/files/d5068971-4c45-416e-8bab-ca79c394c2f0.jpg",
-      description: "Элегантный дизайн с премиальным оборудованием"
+      icon: "Square",
+      title: "Поклейка обоев",
+      description: "Профессиональная поклейка всех видов обоев"
     },
     {
-      title: "Современная ванная",
-      image: "https://cdn.poehali.dev/projects/18b5b297-1a27-462b-9e7b-9286d403bdca/files/f58a17bf-2804-4faa-b335-8a6d6cfa5668.jpg",
-      description: "Минималистичный стиль с качественной отделкой"
+      icon: "Grid3x3",
+      title: "Укладка плитки",
+      description: "Плитка в ванной, кухне, коридоре с гарантией качества"
+    },
+    {
+      icon: "Layers",
+      title: "Укладка ламината и паркета",
+      description: "Монтаж напольных покрытий с идеальной геометрией"
+    },
+    {
+      icon: "Zap",
+      title: "Электромонтажные работы",
+      description: "Замена проводки, установка розеток и выключателей"
+    },
+    {
+      icon: "Droplet",
+      title: "Сантехнические работы",
+      description: "Замена труб, установка сантехники, подключение оборудования"
+    },
+    {
+      icon: "DoorOpen",
+      title: "Установка дверей",
+      description: "Монтаж межкомнатных и входных дверей под ключ"
+    },
+    {
+      icon: "SquareStack",
+      title: "Монтаж гипсокартона",
+      description: "Выравнивание стен, потолки, ниши и перегородки"
+    },
+    {
+      icon: "Ruler",
+      title: "Штукатурка и шпаклевка",
+      description: "Идеальное выравнивание поверхностей под покраску"
     }
   ];
 
@@ -77,9 +107,7 @@ const Index = () => {
               <button onClick={() => scrollToSection('services')} className="text-foreground hover:text-primary transition-colors">
                 Услуги
               </button>
-              <button onClick={() => scrollToSection('portfolio')} className="text-foreground hover:text-primary transition-colors">
-                Портфолио
-              </button>
+
               <Button onClick={() => scrollToSection('contact')}>Заказать звонок</Button>
             </div>
           </nav>
@@ -123,24 +151,19 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="portfolio" className="py-20 bg-muted">
+      <section id="detailed-services" className="py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold font-sans text-center mb-4">Портфолио</h2>
-          <p className="text-center text-muted-foreground mb-16 text-lg">Наши лучшие работы</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolioItems.map((item, index) => (
-              <Card key={index} className="overflow-hidden group cursor-pointer hover:shadow-2xl transition-all duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.15}s` }}>
-                <div className="relative overflow-hidden aspect-[4/3]">
-                  <img 
-                    src={item.image} 
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
+          <h2 className="text-4xl md:text-5xl font-bold font-sans text-center mb-4">Полный перечень услуг</h2>
+          <p className="text-center text-muted-foreground mb-16 text-lg">Выполним работы любой сложности</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {detailedServices.map((service, index) => (
+              <Card key={index} className="border-2 hover:border-primary transition-all duration-300 hover:shadow-xl animate-slide-up" style={{ animationDelay: `${index * 0.08}s` }}>
                 <CardContent className="pt-6">
-                  <h3 className="text-2xl font-bold font-sans mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
+                  <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                    <Icon name={service.icon} size={28} className="text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold font-sans mb-2">{service.title}</h3>
+                  <p className="text-muted-foreground">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
