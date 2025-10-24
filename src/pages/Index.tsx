@@ -56,7 +56,7 @@ const Index = () => {
           <nav className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Icon name="Home" size={28} className="text-primary" />
-              <h1 className="text-2xl font-bold font-sans">РемонтПро</h1>
+              <h1 className="text-2xl font-bold font-sans">Ремонт <span className="text-primary">65</span></h1>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection('services')} className="text-foreground hover:text-primary transition-colors">
@@ -160,7 +160,7 @@ const Index = () => {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Icon name="Home" size={24} className="text-primary" />
-                <h3 className="text-xl font-bold font-sans">РемонтПро</h3>
+                <h3 className="text-xl font-bold font-sans">Ремонт <span className="text-primary">65</span></h3>
               </div>
               <p className="text-background/80">Профессиональный ремонт квартир с гарантией качества</p>
             </div>
@@ -183,7 +183,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-background/20 mt-8 pt-8 text-center text-background/60">
-            <p>© 2024 РемонтПро. Все права защищены.</p>
+            <p>© 2024 Ремонт 65. Все права защищены.</p>
           </div>
         </div>
       </footer>
