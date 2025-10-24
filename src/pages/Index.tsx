@@ -197,7 +197,7 @@ const Index = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 pt-8 border-t border-border">
                   <Button size="lg" variant="outline" className="text-lg px-8 py-6">
                     <Icon name="Phone" size={20} className="mr-2" />
-                    +7 (999) 123-45-67
+                    +7(924)4834514
                   </Button>
                   <Button size="lg" variant="outline" className="text-lg px-8 py-6">
                     <Icon name="MessageCircle" size={20} className="mr-2" />
@@ -210,7 +210,7 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="bg-black text-foreground py-12">
+      <footer className="bg-black text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
@@ -218,27 +218,27 @@ const Index = () => {
                 <Icon name="Home" size={24} className="text-primary" />
                 <h3 className="text-xl font-bold font-sans">Про<span className="text-primary">Ремонт65</span></h3>
               </div>
-              <p className="text-background/80">Профессиональный ремонт квартир с гарантией качества</p>
+              <p className="text-white/80">Профессиональный ремонт квартир с гарантией качества</p>
             </div>
             <div>
               <h4 className="font-bold font-sans mb-4">Контакты</h4>
-              <div className="space-y-2 text-background/80">
+              <div className="space-y-2 text-white/80">
                 <p className="flex items-center gap-2">
                   <Icon name="Phone" size={18} />
-                  +7 (999) 123-45-67
+                  +7(924)4834514
                 </p>
                 <p className="flex items-center gap-2">
                   <Icon name="Mail" size={18} />
-                  info@remontpro.ru
+                  yuri.lopatkin@gmail.com
                 </p>
               </div>
             </div>
             <div>
               <h4 className="font-bold font-sans mb-4">График работы</h4>
-              <p className="text-background/80">Пн-Вс: 9:00 - 21:00</p>
+              <p className="text-white/80">Пн-Вс: 9:00 - 21:00</p>
             </div>
           </div>
-          <div className="border-t border-background/20 mt-8 pt-8 text-center text-background/60">
+          <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
             <p>© 2024 ПроРемонт65. Все права защищены.</p>
           </div>
         </div>
