@@ -223,13 +223,17 @@ const Index = () => {
                   </Button>
                 </form>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 pt-8 border-t border-border">
-                  <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-                    <Icon name="Phone" size={20} className="mr-2" />
-                    +7(924)4834514
+                  <Button size="lg" variant="outline" className="text-lg px-8 py-6" asChild>
+                    <a href="tel:+79244834514">
+                      <Icon name="Phone" size={20} className="mr-2" />
+                      +7(924)4834514
+                    </a>
                   </Button>
-                  <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-                    <Icon name="MessageCircle" size={20} className="mr-2" />
-                    WhatsApp
+                  <Button size="lg" variant="outline" className="text-lg px-8 py-6" asChild>
+                    <a href="https://wa.me/79244834514" target="_blank" rel="noopener noreferrer">
+                      <Icon name="MessageCircle" size={20} className="mr-2" />
+                      WhatsApp
+                    </a>
                   </Button>
                 </div>
               </CardContent>
