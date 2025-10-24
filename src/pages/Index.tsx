@@ -68,27 +68,27 @@ const Index = () => {
 
   const services = [
     {
-      icon: "Wrench",
+      image: "https://cdn.poehali.dev/projects/18b5b297-1a27-462b-9e7b-9286d403bdca/files/2e758e77-6f2b-4daa-9d57-fb68e3b57b7e.jpg",
       title: "Косметический ремонт",
       description: "Быстрое обновление интерьера без глобальных изменений"
     },
     {
-      icon: "Hammer",
+      image: "https://cdn.poehali.dev/projects/18b5b297-1a27-462b-9e7b-9286d403bdca/files/c971ebeb-2c8f-49d1-ab58-0902daa67bd5.jpg",
       title: "Капитальный ремонт",
       description: "Полная трансформация пространства под ваши потребности"
     },
     {
-      icon: "Paintbrush",
+      image: "https://cdn.poehali.dev/projects/18b5b297-1a27-462b-9e7b-9286d403bdca/files/8e042d42-b095-4c02-a38f-6c14eb5dbac1.jpg",
       title: "Дизайнерский ремонт",
       description: "Уникальный интерьер по индивидуальному проекту"
     },
     {
-      icon: "Home",
+      image: "https://cdn.poehali.dev/projects/18b5b297-1a27-462b-9e7b-9286d403bdca/files/7ba7040c-dcda-4859-80dc-02d5d274f164.jpg",
       title: "Ремонт под ключ",
       description: "Комплексное решение от проекта до финальной уборки"
     },
     {
-      icon: "Calculator",
+      image: "https://cdn.poehali.dev/projects/18b5b297-1a27-462b-9e7b-9286d403bdca/files/bfc77e74-670f-44c1-80d7-ddff893c01ad.jpg",
       title: "Полный финансовый отчет",
       description: "Прозрачная смета и детализация всех расходов на каждом этапе"
     }
@@ -140,13 +140,18 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold font-sans text-center mb-4">Наши услуги</h2>
           <p className="text-center text-muted-foreground mb-16 text-lg">Профессиональный подход к каждому проекту</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="border-2 hover:border-primary transition-all duration-300 hover:shadow-xl animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card key={index} className="overflow-hidden border-2 hover:border-primary transition-all duration-300 hover:shadow-xl animate-slide-up group" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="relative overflow-hidden aspect-[4/3]">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                </div>
                 <CardContent className="pt-6">
-                  <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                    <Icon name={service.icon} size={32} className="text-primary" />
-                  </div>
                   <h3 className="text-xl font-bold font-sans mb-2">{service.title}</h3>
                   <p className="text-muted-foreground">{service.description}</p>
                 </CardContent>
