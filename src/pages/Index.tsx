@@ -86,6 +86,11 @@ const Index = () => {
       icon: "Home",
       title: "Ремонт под ключ",
       description: "Комплексное решение от проекта до финальной уборки"
+    },
+    {
+      icon: "Calculator",
+      title: "Полный финансовый отчет",
+      description: "Прозрачная смета и детализация всех расходов на каждом этапе"
     }
   ];
 
@@ -118,11 +123,11 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h2 className="text-5xl md:text-7xl font-bold font-sans mb-6 text-foreground">
-              Ремонт квартир<br/>
+              Ремонт квартир и коттеджей<br/>
               <span className="text-primary">под ключ</span>
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-body">
-              Превратим вашу квартиру в дом мечты с гарантией качества и в срок
+              Превратим вашу квартиру или коттедж в дом мечты с гарантией качества и в срок
             </p>
             <Button size="lg" className="text-lg px-8 py-6" onClick={() => scrollToSection('contact')}>
               Получить консультацию
@@ -241,7 +246,7 @@ const Index = () => {
                 <Icon name="Home" size={24} className="text-primary" />
                 <h3 className="text-xl font-bold font-sans">Про<span className="text-primary">Ремонт65</span></h3>
               </div>
-              <p className="text-white/80">Профессиональный ремонт квартир с гарантией качества</p>
+              <p className="text-white/80">Профессиональный ремонт квартир и коттеджей с гарантией качества</p>
             </div>
             <div>
               <h4 className="font-bold font-sans mb-4">Контакты</h4>
