@@ -51,12 +51,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background font-body">
-      <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-border">
+      <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Icon name="Home" size={28} className="text-primary" />
-              <h1 className="text-2xl font-bold font-sans">Ремонт <span className="text-primary">65</span></h1>
+              <h1 className="text-2xl font-bold font-sans">Про<span className="text-primary">Ремону65</span></h1>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection('services')} className="text-foreground hover:text-primary transition-colors">
@@ -88,7 +88,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 bg-white">
+      <section id="services" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold font-sans text-center mb-4">Наши услуги</h2>
           <p className="text-center text-muted-foreground mb-16 text-lg">Профессиональный подход к каждому проекту</p>
@@ -154,13 +154,13 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="bg-foreground text-background py-12">
+      <footer className="bg-black text-foreground py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Icon name="Home" size={24} className="text-primary" />
-                <h3 className="text-xl font-bold font-sans">Ремонт <span className="text-primary">65</span></h3>
+                <h3 className="text-xl font-bold font-sans">Про<span className="text-primary">Ремону65</span></h3>
               </div>
               <p className="text-background/80">Профессиональный ремонт квартир с гарантией качества</p>
             </div>
@@ -183,7 +183,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-background/20 mt-8 pt-8 text-center text-background/60">
-            <p>© 2024 Ремонт 65. Все права защищены.</p>
+            <p>© 2024 ПроРемону65. Все права защищены.</p>
           </div>
         </div>
       </footer>
