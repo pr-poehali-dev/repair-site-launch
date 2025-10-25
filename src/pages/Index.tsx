@@ -97,14 +97,13 @@ const Index = () => {
   const portfolio = [
     {
       name: "ЖК Авангард",
-      area: "68 м²",
-      duration: "45 дней",
+      area: "85 м²",
       type: "Дизайнерский ремонт",
       images: [
-        "https://cdn.poehali.dev/files/2acc7af2-f4e9-430c-bde9-98cdcc40cc6a.jpg",
-        "https://cdn.poehali.dev/projects/18b5b297-1a27-462b-9e7b-9286d403bdca/files/86fa6b9f-0677-4454-8cd7-b55286bc1ef5.jpg",
-        "https://cdn.poehali.dev/projects/18b5b297-1a27-462b-9e7b-9286d403bdca/files/b7867b21-f7ea-47f6-bc4e-67ac498af8ae.jpg",
-        "https://cdn.poehali.dev/projects/18b5b297-1a27-462b-9e7b-9286d403bdca/files/0da876bf-bf08-4154-846d-94abe303712a.jpg"
+        "https://cdn.poehali.dev/files/7e699a57-ed48-4c67-ab2d-70e4f529d363.jpg",
+        "https://cdn.poehali.dev/files/8c9304a9-31a0-4e25-bb62-e512765feb38.jpg",
+        "https://cdn.poehali.dev/files/6bf9fe46-36a1-43da-b9ca-092fb060362f.jpg",
+        "https://cdn.poehali.dev/files/2297017b-a537-4b11-b6b2-de8f88d0f4c8.jpg"
       ]
     }
   ];
@@ -207,15 +206,6 @@ const Index = () => {
                         <div>
                           <p className="text-sm text-muted-foreground">Площадь</p>
                           <p className="text-lg font-semibold">{project.area}</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center">
-                          <Icon name="Clock" size={24} className="text-primary" />
-                        </div>
-                        <div>
-                          <p className="text-sm text-muted-foreground">Срок выполнения</p>
-                          <p className="text-lg font-semibold">{project.duration}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
