@@ -94,6 +94,21 @@ const Index = () => {
     }
   ];
 
+  const portfolio = [
+    {
+      name: "ЖК Авангард",
+      area: "68 м²",
+      duration: "45 дней",
+      type: "Дизайнерский ремонт",
+      images: [
+        "https://cdn.poehali.dev/files/2acc7af2-f4e9-430c-bde9-98cdcc40cc6a.jpg",
+        "https://cdn.poehali.dev/projects/18b5b297-1a27-462b-9e7b-9286d403bdca/files/86fa6b9f-0677-4454-8cd7-b55286bc1ef5.jpg",
+        "https://cdn.poehali.dev/projects/18b5b297-1a27-462b-9e7b-9286d403bdca/files/b7867b21-f7ea-47f6-bc4e-67ac498af8ae.jpg",
+        "https://cdn.poehali.dev/projects/18b5b297-1a27-462b-9e7b-9286d403bdca/files/0da876bf-bf08-4154-846d-94abe303712a.jpg"
+      ]
+    }
+  ];
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -112,7 +127,9 @@ const Index = () => {
               <button onClick={() => scrollToSection('services')} className="text-foreground hover:text-primary transition-colors">
                 Услуги
               </button>
-
+              <button onClick={() => scrollToSection('portfolio')} className="text-foreground hover:text-primary transition-colors">
+                Портфолио
+              </button>
               <Button onClick={() => scrollToSection('contact')}>Заказать звонок</Button>
             </div>
           </nav>
@@ -155,6 +172,64 @@ const Index = () => {
                   <h3 className="text-xl font-bold font-sans mb-2">{service.title}</h3>
                   <p className="text-muted-foreground">{service.description}</p>
                 </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold font-sans text-center mb-4">Наши работы</h2>
+          <p className="text-center text-muted-foreground mb-16 text-lg">Реализованные проекты с гарантией качества</p>
+          <div className="max-w-6xl mx-auto space-y-16">
+            {portfolio.map((project, idx) => (
+              <Card key={idx} className="overflow-hidden border-2 hover:border-primary transition-all duration-300 hover:shadow-xl animate-slide-up">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="grid grid-cols-2 gap-2 p-2">
+                    {project.images.map((img, i) => (
+                      <div key={i} className="relative aspect-square overflow-hidden rounded-lg group">
+                        <img 
+                          src={img} 
+                          alt={`${project.name} - фото ${i + 1}`}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  <CardContent className="p-8 flex flex-col justify-center">
+                    <h3 className="text-3xl font-bold font-sans mb-6">{project.name}</h3>
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center">
+                          <Icon name="Maximize" size={24} className="text-primary" />
+                        </div>
+                        <div>
+                          <p className="text-sm text-muted-foreground">Площадь</p>
+                          <p className="text-lg font-semibold">{project.area}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center">
+                          <Icon name="Clock" size={24} className="text-primary" />
+                        </div>
+                        <div>
+                          <p className="text-sm text-muted-foreground">Срок выполнения</p>
+                          <p className="text-lg font-semibold">{project.duration}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center">
+                          <Icon name="Star" size={24} className="text-primary" />
+                        </div>
+                        <div>
+                          <p className="text-sm text-muted-foreground">Тип работ</p>
+                          <p className="text-lg font-semibold">{project.type}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </div>
               </Card>
             ))}
           </div>
