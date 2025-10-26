@@ -8,7 +8,7 @@ from typing import Dict, Any
 def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     '''
     Business: Обработка заявок с сайта и отправка уведомлений в Telegram
-    Args: event с httpMethod, body; context с request_id
+    Args: event с httpMethod, body; context с request_id  
     Returns: HTTP response
     '''
     method: str = event.get('httpMethod', 'GET')
