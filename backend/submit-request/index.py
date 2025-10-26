@@ -36,7 +36,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             'body': json.dumps({'error': 'Method not allowed'})
         }
     
-    # Parse request body
+    # Parse request body 
     body_data = json.loads(event.get('body', '{}'))
     name = body_data.get('name', '')
     phone = body_data.get('phone', '')
@@ -67,14 +67,13 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     telegram_url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
     data = urllib.parse.urlencode({
         'chat_id': chat_id,
-        'text': message,
-        'parse_mode': 'HTML'
+        'text': message
     }).encode('utf-8')
     
     try:
         req = urllib.request.Request(telegram_url, data=data, method='POST')
         with urllib.request.urlopen(req, timeout=10) as response:
-            response.read()
+            result = response.read().decode('utf-8')
         
         return {
             'statusCode': 200,
@@ -83,6 +82,16 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
                 'Access-Control-Allow-Origin': '*'
             },
             'body': json.dumps({'success': True, 'message': 'Request submitted successfully'})
+        }
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode('utf-8') if e.fp else 'No error details'
+        return {
+            'statusCode': 500,
+            'headers': {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
+            'body': json.dumps({'error': f'Telegram API error: {e.code} - {error_body}', 'chat_id': chat_id, 'bot_token_prefix': bot_token[:10]})
         }
     except Exception as e:
         return {
