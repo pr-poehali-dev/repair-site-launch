@@ -116,6 +116,17 @@ const Index = () => {
         "https://cdn.poehali.dev/files/66514a8a-ff95-4e8c-9dde-1d1b2bc334e5.jpg",
         "https://cdn.poehali.dev/files/a2bf2a59-f035-430d-b978-c277891da685.jpg"
       ]
+    },
+    {
+      name: "ЖК Авангард",
+      area: "46 м²",
+      type: "Дизайнерский ремонт",
+      images: [
+        "https://cdn.poehali.dev/files/0339561b-988b-453a-818b-d6cc87bf372d.jpg",
+        "https://cdn.poehali.dev/files/55e73950-b525-4825-ba51-bf5406e392b3.jpg",
+        "https://cdn.poehali.dev/files/687c4aa8-7b53-437b-8cf6-2b1294377220.jpg",
+        "https://cdn.poehali.dev/files/06394939-05b2-42fc-b4d0-f3c39d10a090.jpg"
+      ]
     }
   ];
 
