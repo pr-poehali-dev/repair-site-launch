@@ -1,0 +1,23 @@
+{
+  "tests": [
+    {
+      "name": "Submit request successfully",
+      "method": "POST",
+      "body": {
+        "name": "Иван Петров",
+        "phone": "+7 (900) 123-45-67",
+        "comment": "Хочу сделать ремонт в квартире"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Handle OPTIONS request",
+      "method": "OPTIONS",
+      "expectedStatus": 200
+    }
+  ]
+}

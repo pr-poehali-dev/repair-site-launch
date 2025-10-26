@@ -12,9 +12,26 @@ const Index = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    alert(`Спасибо, ${formData.name}! Мы свяжемся с вами по номеру ${formData.phone}`);
-    setFormData({ name: '', phone: '', comment: '' });
+    
+    try {
+      const response = await fetch('https://functions.poehali.dev/0dd5aea3-c4cb-4ce3-b5e7-8d7b6d1115dc', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        alert(`Спасибо, ${formData.name}! Мы свяжемся с вами по номеру ${formData.phone}`);
+        setFormData({ name: '', phone: '', comment: '' });
+      } else {
+        alert('Произошла ошибка при отправке заявки. Попробуйте позже.');
+      }
+    } catch (error) {
+      alert('Произошла ошибка при отправке заявки. Попробуйте позже.');
+    }
+    
     setIsSubmitting(false);
   };
 
