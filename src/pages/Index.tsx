@@ -105,6 +105,17 @@ const Index = () => {
         "https://cdn.poehali.dev/files/6bf9fe46-36a1-43da-b9ca-092fb060362f.jpg",
         "https://cdn.poehali.dev/files/2297017b-a537-4b11-b6b2-de8f88d0f4c8.jpg"
       ]
+    },
+    {
+      name: "ЖК Rose-town",
+      area: "100 м²",
+      type: "Дизайнерский ремонт",
+      images: [
+        "https://cdn.poehali.dev/files/1cc0f12b-96ba-469c-a98f-12a4a616d0e6.jpg",
+        "https://cdn.poehali.dev/files/1eddb367-e1f5-424c-86cb-a928deff7bbe.jpg",
+        "https://cdn.poehali.dev/files/66514a8a-ff95-4e8c-9dde-1d1b2bc334e5.jpg",
+        "https://cdn.poehali.dev/files/a2bf2a59-f035-430d-b978-c277891da685.jpg"
+      ]
     }
   ];
 
