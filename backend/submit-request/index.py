@@ -44,16 +44,16 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     
     # Get Telegram credentials from environment
     bot_token = os.environ.get('TELEGRAM_BOT_TOKEN', '')
-    chat_id = os.environ.get('TELEGRAM_CHAT_ID', '')
+    chat_id = os.environ.get('TELEGRAM_CHAT_ID', '904921284')
     
-    if not bot_token or not chat_id:
+    if not bot_token:
         return {
             'statusCode': 500,
             'headers': {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'
             },
-            'body': json.dumps({'error': 'Telegram credentials not configured'})
+            'body': json.dumps({'error': f'Bot token not found. Env keys: {list(os.environ.keys())}'})
         }
     
     # Format message
