@@ -40,11 +40,17 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     cursor = conn.cursor()
     
     if method == 'POST':
-        # Увеличиваем счётчик при новом посещении
+        # Увеличиваем общий счётчик
         cursor.execute(
             "UPDATE site_visits SET visit_count = visit_count + 1, last_visit = CURRENT_TIMESTAMP WHERE id = 1 RETURNING visit_count"
         )
         result = cursor.fetchone()
+        
+        # Увеличиваем счётчик за сегодня
+        cursor.execute(
+            "INSERT INTO daily_visits (visit_date, visit_count, updated_at) VALUES (CURRENT_DATE, 1, CURRENT_TIMESTAMP) ON CONFLICT (visit_date) DO UPDATE SET visit_count = daily_visits.visit_count + 1, updated_at = CURRENT_TIMESTAMP"
+        )
+        
         conn.commit()
         visit_count = result[0] if result else 0
     else:
